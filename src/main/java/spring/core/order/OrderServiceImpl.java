@@ -1,4 +1,4 @@
-package spring.order;
+package spring.core.order;
 
 import spring.core.discount.DiscountPolicy;
 import spring.core.discount.FixDiscountPolicy;

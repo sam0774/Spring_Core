@@ -6,9 +6,6 @@ import spring.core.member.Grade;
 import spring.core.member.Member;
 import spring.core.member.MemberService;
 import spring.core.member.MemberServiceImpl;
-import spring.order.Order;
-import spring.order.OrderService;
-import spring.order.OrderServiceImpl;
 
 public class OrderServiceTest {
     MemberService memberService = new MemberServiceImpl();

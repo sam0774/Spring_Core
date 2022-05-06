@@ -1,4 +1,4 @@
-package spring.order;
+package spring.core.order;
 
 public class Order {
     private Long memberId; //아이디

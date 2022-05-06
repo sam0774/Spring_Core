@@ -4,9 +4,9 @@ import spring.core.member.Grade;
 import spring.core.member.Member;
 import spring.core.member.MemberService;
 import spring.core.member.MemberServiceImpl;
-import spring.order.Order;
-import spring.order.OrderService;
-import spring.order.OrderServiceImpl;
+import spring.core.order.Order;
+import spring.core.order.OrderService;
+import spring.core.order.OrderServiceImpl;
 
 public class OrderApp {
     public static void main(String[] args) {
