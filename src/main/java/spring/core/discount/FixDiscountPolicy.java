@@ -5,7 +5,8 @@ import spring.core.member.Member;
 
 public class FixDiscountPolicy implements DiscountPolicy{
     private int discountFixAmount = 1000; //1000원 할인
-    @Override
+
+    @Override //얼마나 할인해줄지에 대한 금액 반환
     public int discount(Member member, int price) {
 
         //enum은 상수이므로 == 연산자 사용가능

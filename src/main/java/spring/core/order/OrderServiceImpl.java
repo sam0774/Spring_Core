@@ -1,18 +1,23 @@
 package spring.core.order;
 
 import spring.core.discount.DiscountPolicy;
-import spring.core.discount.FixDiscountPolicy;
 import spring.core.member.Member;
 import spring.core.member.MemberRepository;
 import spring.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService{
 
-
     //주문서비스에서 리포지토리를 통해 회원을 찾아야하므로, MemberRepository 객체 생성
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
+
     //주문서비스에서 할인정책을 정해주므로 DiscountPolicy 객체 생성
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private DiscountPolicy discountPolicy;
+
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
         Member member = memberRepository.findById(memberId);  //리포지토리에서 멤버 찾음
