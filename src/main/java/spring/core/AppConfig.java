@@ -21,10 +21,8 @@ import spring.core.order.OrderServiceImpl;
 */
 
 
-/*
-* @Configuration을 클래스에 붙이고 @Bean을 메소드에 붙이면,
-  해당 메소드의 반환값이 스프링 컨테이너에 스프링 빈으로 등록이 된다.
-*/
+/* @Configuration을 클래스에 붙이고 @Bean을 메소드에 붙이면,
+   해당 메소드의 반환값이 스프링 컨테이너에 스프링 빈으로 등록이 된다.*/
 @Configuration //설정정보
 public class AppConfig { //AppConfig는 IoC컨테이너(DI컨테이너)역할을 한다.
     //역할과 구현 한눈에 들어옴
@@ -54,7 +52,7 @@ public class AppConfig { //AppConfig는 IoC컨테이너(DI컨테이너)역할을
 
 /*
 * 제어의 역전(IoC, Inversion of Control)이란?
-* 프로그램의 제어 흐름을 직접 제어하는 것이 아니라, 외부에서 관리해주는 것을 뜻함
+* 프로그램의 제어 흐름을 직접 제어하는 것이 아니라, 외부에서 관리해주는 것을 뜻함(프레임워크가 IoC를 담당함)
 * ex) JUnit의 @Test, @AfterEach 등
 *
 * 프레임워크: 내가 작성한 코드가 직접 제어의 흐름을 담당하지 않고, 누군가 제어해줌(대신 실행해줌)
