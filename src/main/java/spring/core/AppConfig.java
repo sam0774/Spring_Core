@@ -26,7 +26,7 @@ import spring.core.order.OrderServiceImpl;
 @Configuration //설정정보
 public class AppConfig { //AppConfig는 IoC컨테이너(DI컨테이너)역할을 한다.
     //역할과 구현 한눈에 들어옴
-    @Bean//스프링 컨테이너에 스프링 Bean으로 등록
+    @Bean//스프링 컨테이너에 스프링 Bean으로 등록, 빈 이름은 항상 다르게 등록해야 됨!!
     public MemberService memberService() {
         return new MemberServiceImpl(memberRepository());
     }
@@ -37,8 +37,8 @@ public class AppConfig { //AppConfig는 IoC컨테이너(DI컨테이너)역할을
 
     /* AppConfig refactoring
      * 1. 구성정보에서 역할과 구현을 명확하게 분리함
-     * 2. 중복 제거(유지보수 용이)
-     */
+     * 2. 중복 제거(유지보수 용이) */
+
     @Bean
     public MemberRepository memberRepository() { //함수 추출(method extract)
         return new MemoryMemberRepository();
@@ -48,7 +48,6 @@ public class AppConfig { //AppConfig는 IoC컨테이너(DI컨테이너)역할을
         return new RateDiscountPolicy();
     }
 }
-
 
 /*
 * 제어의 역전(IoC, Inversion of Control)이란?
@@ -73,3 +72,8 @@ public class AppConfig { //AppConfig는 IoC컨테이너(DI컨테이너)역할을
 * - 클라이언트 코드를 변경하지 않고, 클라이언트가 호출하는 대상의 타입 인스턴스를 변경할 수 있다.
 * - 정적인 클래스 의존관계를 변경하지 않으면서, 동적인 객체 인스턴스 의존관계를 쉽게 변경할 수 있다.
 */
+
+/* 실제 스프링에서의 작동 순서
+* 1. 스프링 빈 생성
+  2. 의존관계 주입(DI)
+ */
